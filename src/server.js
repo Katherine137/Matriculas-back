@@ -26,13 +26,13 @@ app.set('port',process.env.PORT || 3000)
 app.get('/',(req,res)=> res.send("Server on"))
 
 //Rutas para usuarios
-app.use('/api',usuarioRoutes)
+app.use('/api/usuarios',usuarioRoutes)
 //Rutas para matriculas
-app.use('/',matriculaRoutes)
+app.use('/api/matricula',matriculaRoutes)
 //Ruta para materias
-app.use('/',materiaRoutes)
+app.use('/api/materias',materiaRoutes)
 //Ruta para estudiantes
-app.use('/',estudianteRoutes)
+app.use('/api/estudiantes',estudianteRoutes)
 
 app.use((req,res)=>res.status(404).send("Endpoint no encontrado - 404"))
 
